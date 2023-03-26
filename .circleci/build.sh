@@ -3,7 +3,7 @@ echo "Downloading few Dependecies . . ."
 git clone --depth=1 -b template https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone --depth=1 https://github.com/Assunzain/Clang-RageTC.git clang
 
-# Main
+# Main 
 KERNEL_NAME=GreenLight-v1.3-OC-[EOL] # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
