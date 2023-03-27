@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone --depth=1 -b Overclock https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone --depth=1 https://github.com/Assunzain/Clang-RageTC.git clang
+git clone -b Overclock --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD-X X01AD
+git clone --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
-# Main 
-KERNEL_NAME=GreenLight-v1.5-OC-[EOL] STABLE # IMPORTANT ! Declare your kernel name
+# Main
+KERNEL_NAME=GreenLight-v1.5-[EOL] STABLE # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
@@ -21,7 +21,7 @@ PATH="${PATH}:${CLANG_ROOTDIR}/bin"
 function check() {
 echo ================================================
 echo My Project CircleCI Edition
-echo version : rev0.1
+echo version : rev0.1 - Goo..
 echo ================================================
 echo BUILDER NAME = ${KBUILD_BUILD_USER}
 echo BUILDER HOSTNAME = ${KBUILD_BUILD_HOST}
@@ -41,7 +41,7 @@ function compile() {
         -d "disable_web_page_preview=true" \
         -d "parse_mode=html" \
         -d text="<b>xKernelCompiler</b>%0ABUILDER NAME : <code>${KBUILD_BUILD_USER}</code>%0ABUILDER HOST : <code>${KBUILD_BUILD_HOST}</code>%0ADEVICE DEFCONFIG : <code>${DEVICE_DEFCONFIG}</code>%0ACLANG VERSION : <code>$(${CLANG_ROOTDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</code>%0ACLANG ROOTDIR : <code>${CLANG_ROOTDIR}</code>%0AKERNEL ROOTDIR : <code>${KERNEL_ROOTDIR}</code>"
- 
+
   cd ${KERNEL_ROOTDIR}
   make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
   make -j$(nproc) ARCH=arm64 O=out \
@@ -66,6 +66,7 @@ function push() {
         -F "disable_web_page_preview=true" \
         -F "parse_mode=html" \
         -F caption="Compile selesai dalam kurun waktu $(($DIFF / 60)) menit(s) dan $(($DIFF % 60)) detik(s). | Untuk <b>Asus Zenfone Max M2 (X01AD)</b> | <b>$(${CLANG_ROOTDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</b>"
+
 }
 # Fin Error
 function finerr() {
