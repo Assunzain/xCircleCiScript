@@ -20,7 +20,7 @@ PATH="${PATH}:${CLANG_ROOTDIR}/bin"
 # Warning !! Dont Change anything there without known reason.
 function check() {
 echo ================================================
-echo My Project CircleCI Editiion
+echo My Project CircleCI Edition
 echo version : rev0.1 - Goo..
 echo ================================================
 echo BUILDER NAME = ${KBUILD_BUILD_USER}
