@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b GreenLight-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b Vdso-T --depth=1 https://github.com/Assunzain/kernel_base X01AD
 git clone --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
-KERNEL_NAME=GreenLight-v2.0-[EOL]-STABLE # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight-Kcal-STABLE # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
