@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b TX --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b GreenLight-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
