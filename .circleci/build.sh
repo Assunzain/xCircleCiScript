@@ -4,7 +4,7 @@ git clone -b A --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone -b clang-15 --depth=1 https://gitlab.com/LeCmnGend/proton-clang clang
 
 # Main
-KERNEL_NAME=GreenLight-[EOL]-OC # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight.v2.1-[EOL]-OC # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
