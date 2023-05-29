@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b A --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
+git clone -b clang-15 --depth=1 hhttps://gitlab.com/LeCmnGend/proton-clang clang
 
 # Main
-KERNEL_NAME=GreenLight-v2.2-[EOL]-OC-STABLE # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight-v2.2-[E.OL]-OC-STABLE # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
