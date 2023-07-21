@@ -1,7 +1,7 @@
 n#!/usr/bin/env bash
 echo "Downloading few Dependecies . . . ."
 git clone -b coba --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
+git clone -b clang-15 --depth=1 https://gitlab.com/LeCmnGend/proton-clang clang
 
 # Main
 KERNEL_NAME=Greenlight-v2.3-OC-KernelSU # IMPORTANT ! Declare your kernel name
