@@ -4,7 +4,7 @@ git clone -b GLKernelSU --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD
 git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
-KERNEL_NAME=Greenlight-v2.3-KSU-EOL-STABLE  # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight.v1.0-OC-KSU-ALPHA # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
@@ -43,8 +43,8 @@ function compile() {
         -d text="<b>xKernelCompiler</b>%0ABUILDER NAME : <code>${KBUILD_BUILD_USER}</code>%0ABUILDER HOST : <code>${KBUILD_BUILD_HOST}</code>%0ADEVICE DEFCONFIG : <code>${DEVICE_DEFCONFIG}</code>%0ACLANG VERSION : <code>$(${CLANG_ROOTDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</code>%0ACLANG ROOTDIR : <code>${CLANG_ROOTDIR}</code>%0AKERNEL ROOTDIR : <code>${KERNEL_ROOTDIR}</code>"
 
   cd ${KERNEL_ROOTDIR}
-  make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
-  make -j$(nproc) ARCH=arm64 O=out \
+  make -j$(nproc) -j8 O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
+  make -j$(nproc) -j8 ARCH=arm64 O=out \
 	CC=${CLANG_ROOTDIR}/bin/clang \
 	CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
 	CROSS_COMPILE_ARM32=${CLANG_ROOTDIR}/bin/arm-linux-gnueabi-
