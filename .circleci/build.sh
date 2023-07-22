@@ -50,8 +50,6 @@ function compile() {
 		CC=clang \
 		CROSS_COMPILE=aarch64-linux-gnu- \
 		CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-		LLVM=1 \
-		LLVM_IAS=1 \
 		V=0 2>&1 | tee error.log
 
     if ! [ -a "$IMAGE" ]; then
@@ -63,7 +61,7 @@ function compile() {
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 GreenLight-v.23-OC-KSU-STABLE-${TANGGAL}.zip *
+    zip -r9 GreenLight-v1.0-OC-KSU-Alpha-${TANGGAL}.zip *
     cd ..
 }
 sendinfo
