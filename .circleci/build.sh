@@ -1,63 +1,29 @@
 #!/usr/bin/env bash
-echo "Downloading few Dependecies . . ."
-git clone --depth=1 -b Overclock https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang.git clang
-
-# Main
-KERNEL_NAME=GreenLight-v1.0-[EOL] # IMPORTANT ! Declare your kernel name
-KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
-DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
-DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
-CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
-export KBUILD_BUILD_USER=Assunzain # Change with your own name or else.
-export KBUILD_BUILD_HOST=GLKernel # Change with your own hostname.
-IMAGE=$(pwd)/X01AD/out/arch/arm64/boot/Image.gz-dtb
-DATE=$(date +"%F-%S")
+echo "Cloning dependencies"
+git clone --depth=1 https://github.com/kdrag0n/proton-clang  clang
+git clone --depth=1 https://github.com/Assunzain/AnyKernel3 -b X01AD AnyKernel
+echo "Done"
+IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
+TANGGAL=$(date +"%F-%S")
 START=$(date +"%s")
-PATH="${PATH}:${CLANG_ROOTDIR}/bin"
+KERNEL_DIR=$(pwd)
+PATH="${KERNEL_DIR}/clang/bin:$PATH"
+export KBUILD_COMPILER_STRING=$(${KERNEL_DIR}/clang/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
+export ARCH=arm64
+export SUBARCH=arm64
+export KBUILD_BUILD_HOST=GLkernel
+export KBUILD_BUILD_USER=AssunZain
+# sticker plox
 
-# Checking environtment
-# Warning !! Dont Change anything there without known reason.
-function check() {
-echo ================================================
-echo My Project CircleCI Edition
-echo version : rev0.1
-echo ================================================
-echo BUILDER NAME = ${KBUILD_BUILD_USER}
-echo BUILDER HOSTNAME = ${KBUILD_BUILD_HOST}
-echo DEVICE_DEFCONFIG = ${DEVICE_DEFCONFIG}
-echo CLANG_VERSION = $(${CLANG_ROOTDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')
-echo CLANG_ROOTDIR = ${CLANG_ROOTDIR}
-echo KERNEL_ROOTDIR = ${KERNEL_ROOTDIR}
-echo ================================================
-}
-
-# Compiler
-function compile() {
-
-   # Your Telegram Group
-   curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" \
+# Send info plox  channel
+function sendinfo() {
+    curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" \
         -d chat_id="$chat_id" \
         -d "disable_web_page_preview=true" \
         -d "parse_mode=html" \
-        -d text="<b>xKernelCompiler</b>%0ABUILDER NAME : <code>${KBUILD_BUILD_USER}</code>%0ABUILDER HOST : <code>${KBUILD_BUILD_HOST}</code>%0ADEVICE DEFCONFIG : <code>${DEVICE_DEFCONFIG}</code>%0ACLANG VERSION : <code>$(${CLANG_ROOTDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</code>%0ACLANG ROOTDIR : <code>${CLANG_ROOTDIR}</code>%0AKERNEL ROOTDIR : <code>${KERNEL_ROOTDIR}</code>"
-
-  cd ${KERNEL_ROOTDIR}
-  make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
-  make -j$(nproc) ARCH=arm64 O=out \
-	CC=${CLANG_ROOTDIR}/bin/clang \
-	CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
-	CROSS_COMPILE_ARM32=${CLANG_ROOTDIR}/bin/arm-linux-gnueabi-
-
-   if ! [ -a "$IMAGE" ]; then
-	finerr
-	exit 1
-   fi
-    git clone --depth=1 https://github.com/Assunzain/Anykernel3.git AnyKernel
-	cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
+        -d text="GreenLight Kernel Asus Zenfone Max M2"
 }
-
-# Push
+# Push kernel to channel
 function push() {
     cd AnyKernel
     ZIP=$(echo *.zip)
@@ -65,8 +31,7 @@ function push() {
         -F chat_id="$chat_id" \
         -F "disable_web_page_preview=true" \
         -F "parse_mode=html" \
-        -F caption="Compile selesai dalam kurun waktu $(($DIFF / 60)) menit(s) dan $(($DIFF % 60)) detik(s). | Untuk <b>Asus Zenfone Max M2 (X01AD)</b> | <b>$(${CLANG_ROOTDIR}/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</b>"
-
+        -F caption="Build took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s). | For <b>Redmi Note 7</b> | <b>$(${GCC}gcc --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g')</b>"
 }
 # Fin Error
 function finerr() {
@@ -74,17 +39,42 @@ function finerr() {
         -d chat_id="$chat_id" \
         -d "disable_web_page_preview=true" \
         -d "parse_mode=markdown" \
-        -d text="Yahh Build kamu error(s)"
+        -d text="Build throw an error(s)"
     exit 1
 }
+# Compile plox
+function compile() {
+    make O=out ARCH=arm64 GreenLight_defconfig
+    make -j$(nproc --all) O=out \
+                ARCH=arm64 \
+		CC=clang \
+		CROSS_COMPILE=aarch64-linux-gnu- \
+		CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+		LLVM=1 \
+		LLVM_IAS=1 \
+		LD=ld.lld \
+		AR=llvm-ar \
+		NM=llvm-nm \
+		OBJCOPY=llvm-objcopy \
+		OBJDUMP=llvm-objdump \
+		STRIP=llvm-strip \
+		READELF=llvm-readelf \
+		OBJSIZE=llvm-size \
+		V=0 2>&1 | tee error.log
 
+    if ! [ -a "$IMAGE" ]; then
+        finerr
+        exit 1
+    fi
+    cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
+}
 # Zipping
 function zipping() {
     cd AnyKernel || exit 1
-    zip -r9 ${KERNEL_NAME}-${DEVICE_CODENAME}-${DATE}.zip *
+    zip -r9 GreenLight-v.23-OC-KSU-STABLE-${TANGGAL}.zip *
     cd ..
 }
-check
+sendinfo
 compile
 zipping
 END=$(date +"%s")
