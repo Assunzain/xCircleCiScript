@@ -4,7 +4,7 @@ git clone -b GLKernelSU --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD
 git clone -b release/16.x --depth=1 https://gitlab.com/clangsantoni/cosmic_clang clang
 
 # Main
-KERNEL_NAME=Greenlight-v2.3-KSU-EOL-STABL.E # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=Greenlight-v2.3-KSU-EOL-STABLE # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
