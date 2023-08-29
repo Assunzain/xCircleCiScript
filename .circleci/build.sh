@@ -4,7 +4,7 @@ git clone -b GLKernelSU-non-oc --depth=1 https://github.com/Assunzain/Kernel_asu
 git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
-KERNEL_NAME=GreenLight-v2.2-KSU-BETA-Test # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight-v2.2-KSU-BETA-Test1 # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
