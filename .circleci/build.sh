@@ -4,7 +4,7 @@ git clone -b thirteen --depth=1 https://github.com/Assunzain/kernel_mido X01AD
 git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
-KERNEL_NAME=GreenLight # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=mido # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=mido_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
