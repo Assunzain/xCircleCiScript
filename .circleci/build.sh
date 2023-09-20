@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . . ."
-git clone -b lineage-20.0 --depth=1 https://github.com/Assunzain/kernel_mido/commits/lineage-20.0 X01AD
+git clone -b lineage-20.0 --depth=1 https://github.com/Assunzain/kernel_mido X01AD
 git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
