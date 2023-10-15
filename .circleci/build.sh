@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . . ."
 git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone -b clang-17 --depth=1 https://gitlab.com/LeCmnGend/proton-clang/-/tree/clang-17?ref_type=heads clang
+git clone -b 17 --depth=1 https://gitlab.com/varunhardgamer/trb_clang clang
 
 # Main
 KERNEL_NAME=KSU-UPDATE # IMPORTANT ! Declare your kernel name
