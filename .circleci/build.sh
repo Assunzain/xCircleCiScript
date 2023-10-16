@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . . ."
-git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b GLKernelSU-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone -b main --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
 # Main
-KERNEL_NAME=KSU-UPDATE121 # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight-v2.4-NoN-OC-KSU-STABLE# IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
-DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
+DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=AssunZain # Change with your own name or else.
 export KBUILD_BUILD_HOST=GLKernel # Change with your own hostname.
