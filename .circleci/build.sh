@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . . ."
 git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-sudo wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r498229b.tar.gz
+wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r498229b.tar.gz
 mkdir clang
-sudo tar zxvf clang-r498229b.tar.gz -C clang
+tar zxvf clang-r498229b.tar.gz -C clang
 
 # Main
 KERNEL_NAME=Tes # IMPORTANT ! Declare your kernel name
