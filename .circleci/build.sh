@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . . ."
 git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-wget https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.1/clang+llvm-17.0.1-aarch64-linux-gnu.tar.xz
+wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/android-arm64-deadpool-4.9-android13-tv/clang-r475365.tar.gz
 mkdir clang
-tar zxvf clang+llvm-17.0.1-aarch64-linux-gnu.tar.xz -C clang
+tar zxvf clang-r475365.tar.gz -C clang
 
 # Main
 KERNEL_NAME=Tes # IMPORTANT ! Declare your kernel name
