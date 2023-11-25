@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone -b Neutron-16 https://gitlab.com/kslsdsdlkf/neutron-clang clang
+git clone -b main --depth=1 https://github.com/Klozz/Yuki-clang clang
 
 # Main
 KERNEL_NAME=Tes1 # IMPORTANT ! Declare your kernel name
