@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-wget https://github.com/ZyCromerZ/Clang/releases/download/16.0.6-20231003-release/Clang-16.0.6-20231003.tar.gz
-mkdir clang
-tar zxvf Clang-16.0.6-20231003.tar.gz -C clang
+git clone -b Neutron-16 https://gitlab.com/kslsdsdlkf/neutron-clang clang
 
 # Main
 KERNEL_NAME=Tes1 # IMPORTANT ! Declare your kernel name
