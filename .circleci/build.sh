@@ -4,7 +4,7 @@ git clone -b 1 --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone --depth=1 https://gitlab.com/Joker-V2/prebuilts_clang_host_linux-x86_clang-r498229 clang
 
 # Main
-KERNEL_NAME=Tes1 # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=Tes # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
