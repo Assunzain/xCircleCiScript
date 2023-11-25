@@ -9,7 +9,7 @@ tar zxvf clang-r498229b.tar.gz -C clang
 KERNEL_NAME=Tes2 # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
-DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
+DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=AssunZain # Change with your own name or else.
 export KBUILD_BUILD_HOST=GLKernel # Change with your own hostname.
@@ -48,8 +48,6 @@ function compile() {
   make -j$(nproc) -j8 O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
   make -j$(nproc) -j8 ARCH=arm64 O=out \
 	CC=${CLANG_ROOTDIR}/bin/clang \
-        LLVM=${CLANG_ROOTDIR}/bin/llvm-16 \
-	LLVM_IAS=${CLANG_ROOTDIR}bin/llvm-16 \
 	CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
 	CROSS_COMPILE_ARM32=${CLANG_ROOTDIR}/bin/arm-linux-gnueabi- 
 
