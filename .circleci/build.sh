@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b 1 --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone --depth=1 https://gitlab.com/Joker-V2/prebuilts_clang_host_linux-x86_clang-r498229 clang
+git clone -b GLKernelSU-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone --depth=1 https://gitlab.com/arrowos-project/android_prebuilts_clang_host_linux-x86_clang-r468909 -b master clang
 
 # Main
-KERNEL_NAME=Tes # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=GreenLight-v2.6-NoN-OC-KSU-STABLE # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
-DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
+DEVICE_DEFCONFIG=GreenLight_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=AssunZain # Change with your own name or else.
 export KBUILD_BUILD_HOST=GLKernel # Change with your own hostname.
