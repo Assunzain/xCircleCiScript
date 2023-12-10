@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b GLKernelSU-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone --depth=1 https://gitlab.com/arrowos-project/android_prebuilts_clang_host_linux-x86_clang-r468909 -b master clang
+git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang/ -b clang-17 clang
 
 # Main
 KERNEL_NAME=GreenLight-v2.6-NoN-OC-KSU-STABLE # IMPORTANT ! Declare your kernel name
