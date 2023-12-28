@@ -3,7 +3,6 @@ echo "Downloading few Dependecies . . ."
 git clone -b GLKernelSU-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone --depth=1 https://github.com/Assunzain/Clang-RageTC clang
 
-
 # Main
 KERNEL_NAME=GreenLight-v2.7-NoN-OC-KSU-STABLE # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
