@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b 14 --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r498229b.tar.gz
-mkdir clang
-tar zxvf clang-r498229b.tar.gz -C clang
+git clone https://gitlab.com/LeCmnGend/proton-clang -b clang-17 clang
 
 # Main
 KERNEL_NAME=Tes1 # IMPORTANT ! Declare your kernel name
