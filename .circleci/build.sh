@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b 14- --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b clang-r487747c clang
+git clone https://gitlab.com/inferno0230/clang-r487747c -b thirteen clang
 
 # Main
 KERNEL_NAME=Tes21 # IMPORTANT ! Declare your kernel name
@@ -45,12 +45,8 @@ function compile() {
   cd ${KERNEL_ROOTDIR}
   make -j$(nproc) -j8 O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
   make -j$(nproc) -j8 ARCH=arm64 O=out \
-	CC=${CLANG_ROOTDIR}/bin/clang \
-	CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
-	CROSS_COMPILE_ARM32=${CLANG_ROOTDIR}/bin/arm-linux-gnueabi-
-        TARGET_KERNEL_ADDITIONAL_FLAGS := \
-                                      LLVM=1 \
-                                      LLVM_IAS=1 
+	CC=${CLANG_ROOTDIR}/bin/clang
+	
 
    if ! [ -a "$IMAGE" ]; then
 	finerr
