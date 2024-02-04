@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b 14- --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone https://gitlab.com/inferno0230/clang-r487747c -b thirteen clang
+git clone --depth=1 https://gitlab.com/inferno0230/clang-r487747c -b thirteen clang
 
 # Main
 KERNEL_NAME=Tes21 # IMPORTANT ! Declare your kernel name
@@ -46,8 +46,8 @@ function compile() {
   make -j$(nproc) -j8 O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
   make -j$(nproc) -j8 ARCH=arm64 O=out \
 	CC=${CLANG_ROOTDIR}/bin/clang \
-        make LLVM=1 \
-        make LLVM_IAS=1
+        LLVM=1 \
+        LLVM_IAS=1
 	
 
    if ! [ -a "$IMAGE" ]; then
