@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b 14- --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b refs/heads/master/clang-r487747c clang
+git clone https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b master/clang-r487747c clang
 
 # Main
 KERNEL_NAME=Tes21 # IMPORTANT ! Declare your kernel name
