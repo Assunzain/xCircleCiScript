@@ -45,10 +45,9 @@ function compile() {
   cd ${KERNEL_ROOTDIR}
   make -j$(nproc) -j8 O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
   make -j$(nproc) -j8 ARCH=arm64 O=out \
-	CC=${CLANG_ROOTDIR}/bin/clang
-        TARGET_KERNEL_ADDITIONAL_FLAGS := \
-                                      LLVM=1 \
-                                      LLVM_IAS=1
+	CC=${CLANG_ROOTDIR}/bin/clang \
+        make LLVM=1 \
+        make LLVM_IAS=1
 	
 
    if ! [ -a "$IMAGE" ]; then
