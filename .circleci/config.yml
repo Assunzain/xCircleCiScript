@@ -8,6 +8,9 @@ jobs:
           command: |
            git config --global user.name "AssunZain"
            git config --global user.email "Asepsunanda.zain@gmail.com"
+           TARGET_KERNEL_ADDITIONAL_FLAGS := \
+                                      LLVM=1 \
+                                      LLVM_IAS=1
            git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} script
            bash script/.circleci/build.sh
 workflows:
