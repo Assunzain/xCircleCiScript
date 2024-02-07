@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b  GLKernel-14 --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b  enforcing --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r498229b.tar.gz
 mkdir clang
 tar zxvf clang-r498229b.tar.gz -C clang
 
 # Main
-KERNEL_NAME=Tes # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=Tes2 # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
