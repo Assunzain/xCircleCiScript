@@ -48,7 +48,6 @@ function compile() {
 	CC=${CLANG_ROOTDIR}/bin/clang \
         LLVM=1 \
         LLVM_IAS=1 \
-        CLANG_TRIPLE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
         CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-android-
 	
 
