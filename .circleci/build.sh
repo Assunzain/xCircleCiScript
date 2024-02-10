@@ -46,10 +46,8 @@ function compile() {
   make -j$(nproc) -j8 O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
   make -j$(nproc) -j8 ARCH=arm64 O=out \
 	CC=${CLANG_ROOTDIR}/bin/clang \
-        LLVM=1 \
-        LLVM_IAS=1 \
-        CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-android-
-	
+	CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
+	CROSS_COMPILE_ARM32=${CLANG_ROOTDIR}/bin/arm-linux-gnueabi- 
 
    if ! [ -a "$IMAGE" ]; then
 	finerr
