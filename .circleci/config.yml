@@ -9,7 +9,7 @@ jobs:
            git config --global user.name "AssunZain"
            git config --global user.email "Asepsunanda.zain@gmail.com"
            git clone --depth=1 https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} script
-          #bash script/.circleci/build.sh
+           # bash script/.circleci/build.sh
            bash script/.circleci/build-2.sh
 workflows:
   version: 2.1
