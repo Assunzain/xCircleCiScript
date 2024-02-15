@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b  enforcing --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b  Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r510928.tar.gz
 mkdir clang
 tar zxvf clang-r510928.tar.gz -C clang
