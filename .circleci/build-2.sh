@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b  Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b  14-KSU --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r510928.tar.gz
 mkdir clang
 tar zxvf clang-r510928.tar.gz -C clang
 
 # Main
-KERNEL_NAME=Perf-enforcing # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=UPDATE-KSU # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
