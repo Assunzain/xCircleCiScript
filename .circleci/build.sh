@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone https://gitlab.com/arrowos-project/android_prebuilts_clang_host_linux-x86_clang-r437112b -b master clang
+git clone --depth=1 https://gitlab.com/arrowos-project/android_prebuilts_clang_host_linux-x86_clang-r437112b -b master clang
 
 # Main
 KERNEL_NAME=baru # IMPORTANT ! Declare your kernel name
@@ -48,6 +48,7 @@ function compile() {
 	CC=${CLANG_ROOTDIR}/bin/clang \
         LLVM=1 \
         LLVM_IAS=1 \
+	HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument" \
 	CROSS_COMPILE=${CLANG_ROOTDIR}/bin/aarch64-linux-gnu- \
 	CROSS_COMPILE_ARM32=${CLANG_ROOTDIR}/bin/arm-linux-gnueabi- 
 
