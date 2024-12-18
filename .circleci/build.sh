@@ -4,13 +4,13 @@ git clone -b Perf{KSU} --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD 
 git clone --depth=1 https://gitlab.com/LeCmnGend/clang -b clang-15 clang
 
 # Main
-KERNEL_NAME=baru # IMPORTANT ! Declare your kernel name
+KERNEL_NAME=Perf-plus-Kernel # IMPORTANT ! Declare your kernel name
 KERNEL_ROOTDIR=$(pwd)/X01AD # IMPORTANT ! Fill with your kernel source root directory.
 DEVICE_CODENAME=X01AD # IMPORTANT ! Declare your device codename
 DEVICE_DEFCONFIG=X01AD_defconfig # IMPORTANT ! Declare your kernel source defconfig file here.
 CLANG_ROOTDIR=$(pwd)/clang # IMPORTANT! Put your clang directory here.
 export KBUILD_BUILD_USER=AssunZain # Change with your own name or else.
-export KBUILD_BUILD_HOST=GLKernel # Change with your own hostname.
+export KBUILD_BUILD_HOST=GLKernelBased # Change with your own hostname.
 IMAGE=$(pwd)/X01AD/out/arch/arm64/boot/Image.gz-dtb
 DATE=$(date +"%F-%S")
 START=$(date +"%s")
