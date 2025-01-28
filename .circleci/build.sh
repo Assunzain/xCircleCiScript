@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
 git clone -b KSU-NEXT --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
-git clone --depth=1 https://gitlab.com/LeCmnGend/clang -b clang-15 clang
+git clone https://github.com/kdrag0n/proton-clang -b master clang
 
 # Main
 KERNEL_NAME=KSU-NEXT-Kernel # IMPORTANT ! Declare your kernel name
