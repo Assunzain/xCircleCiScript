@@ -2,6 +2,7 @@
 echo "Downloading few Dependecies . . ."
 git clone -b GLKernel-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master clang
+cd X01AD
 wget https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh
 bash setup.sh --cleanup
 rm -rf setup.sh
