@@ -5,7 +5,7 @@ git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master clang
 cd X01AD
 wget https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh
 bash setup.sh --cleanup
-curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next
+curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -
 cd
 
 # Main
