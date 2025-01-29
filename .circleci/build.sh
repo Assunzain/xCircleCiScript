@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 echo "Downloading few Dependecies . . ."
-git clone -b KSU-NEXT --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
+git clone -b GLKernel-non-oc --depth=1 https://github.com/Assunzain/Kernel_asus_X01AD X01AD
 git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master clang
+wget https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh
+bash setup.sh --cleanup
+rm -rf setup.sh
+curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next
 
 # Main
 KERNEL_NAME=KSU-NEXT-Kernel-Z # IMPORTANT ! Declare your kernel name
