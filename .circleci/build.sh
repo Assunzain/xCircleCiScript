@@ -7,6 +7,7 @@ wget https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh
 bash setup.sh --cleanup
 rm -rf setup.sh
 curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next
+cd
 
 # Main
 KERNEL_NAME=KSU-NEXT-Kernel-Z # IMPORTANT ! Declare your kernel name
